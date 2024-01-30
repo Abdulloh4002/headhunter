@@ -2,11 +2,13 @@ package org.example.headhunterapplication.service;
 
 
 import org.example.headhunterapplication.dto.PermissionDTO;
+import org.example.headhunterapplication.dto.RoleDTO;
 
 import java.util.List;
 
 public interface PermissionService {
     PermissionDTO getPermissionById(Integer id);
+
     List<PermissionDTO> getAllPermissions();
 
 

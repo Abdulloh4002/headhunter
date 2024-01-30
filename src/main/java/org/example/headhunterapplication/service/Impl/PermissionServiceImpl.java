@@ -2,9 +2,13 @@ package org.example.headhunterapplication.service.Impl;
 
 import lombok.Data;
 import org.example.headhunterapplication.dto.PermissionDTO;
+import org.example.headhunterapplication.dto.RoleDTO;
 import org.example.headhunterapplication.entity.Permission;
+import org.example.headhunterapplication.entity.Role;
 import org.example.headhunterapplication.mapper.PermissionMapper;
+import org.example.headhunterapplication.mapper.RoleMapper;
 import org.example.headhunterapplication.repository.PermissionRepository;
+import org.example.headhunterapplication.repository.RoleRepository;
 import org.example.headhunterapplication.service.PermissionService;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +20,7 @@ public class PermissionServiceImpl implements PermissionService {
 
     private final PermissionRepository repository;
     private final PermissionMapper mapper;
+
 
     @Override
     public PermissionDTO getPermissionById(Integer id) {

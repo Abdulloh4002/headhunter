@@ -2,17 +2,14 @@ package org.example.headhunterapplication.dto;
 
 import lombok.*;
 
-import java.util.Set;
-
 @Builder
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoleDTO {
 
+public class ResumeDTO {
     private Integer id;
-    private String name;
-    private Set<PermissionDTO> permissions;
-
+    private String title;
+    private String description;
 }

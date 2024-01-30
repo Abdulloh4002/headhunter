@@ -2,6 +2,9 @@ package org.example.headhunterapplication.controller;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.example.headhunterapplication.dto.RoleDTO;
 import org.example.headhunterapplication.service.RoleService;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @RequestMapping("role")
 public class RoleController {
     private final RoleService roleService;

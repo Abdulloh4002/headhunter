@@ -1,15 +1,22 @@
 package org.example.headhunterapplication.dto;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
+
+import java.util.Set;
 
 @Builder
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
 
     private Integer id;
     private String name;
     private String password;
+    private CandidateDTO candidateDTO;
+    private Set<RoleDTO> roles;
+    private Set<CompanyDTO> companies;
 
 }
 

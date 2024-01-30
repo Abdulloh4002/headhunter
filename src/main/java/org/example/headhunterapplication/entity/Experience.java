@@ -1,10 +1,9 @@
 package org.example.headhunterapplication.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
+import java.util.Date;
 
 @Entity
 @Builder
@@ -12,19 +11,20 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
-
+public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
-    private String password;
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Company> companies;
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Role> roles;
     @OneToOne(cascade = CascadeType.ALL)
-    private Candidate candidate;
+    private Resume resume;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Company company;
+
+    private Date startDate;
+    private Date endDate;
+    private boolean present;
+    private String position;
+    private String description;
 }

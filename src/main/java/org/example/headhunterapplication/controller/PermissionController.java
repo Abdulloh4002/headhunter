@@ -2,14 +2,20 @@ package org.example.headhunterapplication.controller;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.example.headhunterapplication.dto.PermissionDTO;
+import org.example.headhunterapplication.dto.RoleDTO;
 import org.example.headhunterapplication.service.PermissionService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @RequestMapping("permission")
 public class PermissionController {
     private final PermissionService permissionService;
@@ -18,6 +24,7 @@ public class PermissionController {
     public List<PermissionDTO> getPermissions(){
         return permissionService.getAllPermissions();
     }
+
 
     @GetMapping("/{id}")
     public PermissionDTO getPermissionById(@PathVariable Integer id){

@@ -2,6 +2,9 @@ package org.example.headhunterapplication.controller;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.example.headhunterapplication.dto.UserDTO;
 import org.example.headhunterapplication.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @RequestMapping("user")
 public class UserController {
     private final UserService userService;

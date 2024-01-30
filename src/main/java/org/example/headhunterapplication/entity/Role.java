@@ -1,16 +1,14 @@
 package org.example.headhunterapplication.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 
 @Entity
-@Data
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Role {
@@ -18,7 +16,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable()
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable
     private Set<Permission> permissions;
+
 }

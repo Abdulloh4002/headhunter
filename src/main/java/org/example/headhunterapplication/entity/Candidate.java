@@ -12,19 +12,18 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+public class Candidate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
-    private String password;
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Company> companies;
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Role> roles;
+    private String surname;
+    private String address;
+    private String phoneNumber;
     @OneToOne(cascade = CascadeType.ALL)
-    private Candidate candidate;
+    private Resume resume;
+
 
 }
